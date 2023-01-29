@@ -1,15 +1,14 @@
+USE pds;
+SELECT * FROM employees order by FIRST_NAME asc;
 
-SELECT * FROM pds.employees order by LAST_NAME;
+USE pds;
+SELECT FIRST_NAME, LAST_NAME, SALARY, SALARY*0.15 AS TAX FROM employees;
 
-SELECT FIRST_NAME, LAST_NAME,  SALARY, (SALARY * 0.15) AS TAX
-FROM pds.employees
-order by LAST_NAME;
+USE pds;
+SELECT sum(SALARY) FROM employees;
 
-SELECT SUM(SALARY)
-FROM pds.employees;
+USE pds;
+SELECT max(SALARY) as MAX_SALARY, min(SALARY) as MAX_SALARY FROM employees;
 
-SELECT MAX(SALARY), MIN(SALARY)
-FROM pds.employees;
-
-SELECT AVG(SALARY), count(EMPLOYEE_ID)
-FROM pds.employees;
+USE pds;
+SELECT avg(SALARY) as AVERAGE_SALARY, count(FIRST_NAME) as WORKERS FROM employees;
